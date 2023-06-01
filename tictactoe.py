@@ -49,7 +49,7 @@ def turn(board: list, player: int) -> list:
     print(f'Turn of player {str(player)}: ', end="\n - \n")
     column= input("Type column number for your next action: ")
     raw= input("Type raw number for your next action: ")
-    print(f"You decided to play in case: ("+column+", "+raw+")")
+    print(f"You decided to play in case: ({column}, {raw})", end="\n - \n")
 
     # In case the player try to play in a position already occupied
     while board[int(column)+int(raw)*3] != " ":
