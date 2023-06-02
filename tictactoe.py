@@ -34,34 +34,31 @@ def show_board(board: list) -> None:
 show_board(board)
 print("Player 1 takes X and player 2 takes O", end="\n - \n")
 
-def turn(board: list, player: int) -> list:
-    """Takes a list and the number of current player, return a list with the action of the current player
+def turn(board: list, player: int) -> None:
+    """Takes a list and the number of current player, show the board with the new action
 
     Args:
         board (list): a list wich symbolises the board
         player (int): current player turn
-
-    Returns:
-        list: the board with the action of the player
     """
     print(f'Turn of player {str(player)}: ', end="\n - \n")
     column= input("Type column number for your next action: ")
-    raw= input("Type raw number for your next action: ")
-    print(f"You decided to play in case: ({column}, {raw})", end="\n - \n")
+    row= input("Type row number for your next action: ")
+    print(f"You decided to play in case: ({column}, {row})", end="\n - \n")
 
     # In case the player try to play in a position already occupied
-    while board[int(column)+int(raw)*3] != " ":
+    while board[int(column)+int(row)*3] != " ":
         show_board(board)
         print("This position is already occupied! Type a new one please")
         column= input("Type column number for your next action: ")
-        raw= input("Type raw number for your next action: ")
-        print(f"You decided to play in case: ("+column+", "+raw+")")
+        row= input("Type row number for your next action: ")
+        print(f"You decided to play in case: ("+column+", "+row+")")
 
     # Select symbol of current player
     if player == 1:
-        board[int(column)+int(raw)*3]="X"
+        board[int(column)+int(row)*3]="X"
     if player == 2:
-        board[int(column)+int(raw)*3]="O"
+        board[int(column)+int(row)*3]="O"
 
     show_board(board)
 
