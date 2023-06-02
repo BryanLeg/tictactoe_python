@@ -33,11 +33,12 @@ def show_board(board: list) -> list:
     print(" |")
     print("   -------------")
 
+# Show the initial board
 show_board(board)
 print("Player 1 takes X and player 2 takes O", end="\n - \n")
 
 def turn(board: list, player: int) -> list:
-    """Takes list and a number, return a list with the action of the current player
+    """Takes a list and the number of current player, return a list with the action of the current player
 
     Args:
         board (list): a list wich symbolises the board
