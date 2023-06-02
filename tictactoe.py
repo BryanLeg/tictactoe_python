@@ -6,14 +6,11 @@ player = 1
 in_progress = True
 
 
-def show_board(board: list) -> list:
-    """Takes an empty list, returns a list to show a board
+def show_board(board: list) -> None:
+    """Takes an empty list, show the board
 
     Args:
         board (list): an empty list
-
-    Returns:
-        list: a list to show the board
     """
     print("     0)  1)  2)")
     print("   -------------")
